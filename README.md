@@ -1,5 +1,7 @@
 # Alfy-BootCamp
 All the stuff about the bootcamp
 ## first week
-  ### Hello Word
-  ### Turtle
+  ### Monday - Hello Word
+    This is the monday assignment where you have to print a message on the screen
+  ### Tuesday - Turtle
+    Giving a little introduction to the turtle module 

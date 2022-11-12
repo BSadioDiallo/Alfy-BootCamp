@@ -12,6 +12,14 @@ def input_list_helper():
     return numbers
 
 def input_list():
+    """ the user_list() function
+    collects numbers from user input,
+    calculate their sum and return it as a list
+		(We recommend creating a helper function named 
+		input_list_helper for collecting the user input
+    :return: list of numbers that were given
+    by the user, the last object is the sum of all the others
+    """
     numbers = input_list_helper()
 
     if len(numbers) >= 1:
@@ -25,6 +33,16 @@ def input_list():
     return numbers
 
 def check_monotonic_sequence(sequence):
+    """ get a sequence (list) of numbers and determine its
+    monotonicity type
+
+    :return: list of 4 booleans that represent 4 different
+             monotonicity characters
+    - At the 0 indexes: monotonicity up
+    - At the 1 index: monotonicity up strong
+    - At the 2 indexes: monotonicity down
+    - At the 3 indexes: monotonicity down strong """
+    
     if len(sequence) == 0 or len(sequence) == 1:
         return [True, True, True, True]
 
@@ -82,6 +100,16 @@ def monotonicity_down_handler(sequence):
         return [ down, strongDown ]
 
 def check_monotonic_sequence_inverse(bool_list):
+    """ The function that gets a boolean list, and checks if it 
+	  matches any of the valid monotonicity cases, if it does,
+    it will return a matching list, 
+		else (if such doesn't exist such a sequence), 
+		it will return None    
+
+    :param def_bool: a list of 4 booleans
+    :return: matching sequence to the booleans
+						 monotonicity_inverse value
+    """
     if len(bool_list) != 4:
         print('invalid input')
         return
@@ -115,6 +143,12 @@ def check_monotonic_sequence_inverse(bool_list):
     return None
 
 def primes_generator(n):
+    """ the functions find and return a list of prime numbers
+            with n primes in it.
+
+    :param n: number of primes the function needs to return
+    :return: list that contains the amount of n prime numbers.
+    """
     if n < 1:
         return []
     primes = []
@@ -133,9 +167,18 @@ def primes_generator(n):
     return primes
 
 def is_empty_vector(vec_lst):
+    """
+    being called by vectors_list_sum() 
+		to check if a vector list is empty
+
+    :param vec_lst: a list with lists inside of it,
+					 each sublist     is a vector
+    :return: True when empty and False when not.
+    """
     if len(vec_lst) == 0:
         return True
     return False
+
 def can_have_sum(vec_lst):
     for i in range(len(vec_lst)-1):
         j = i + 1
@@ -144,6 +187,14 @@ def can_have_sum(vec_lst):
     return True
 
 def vectors_list_sum(vec_lst):
+    """ get a list of vectors, add them to each other
+    and returns a vector of their sum.
+
+    :param vec_lst: a list with lists inside of it, 
+					each sublist is a vector
+
+    :return: list of the total vectors sum.
+    """
     if not is_empty_vector(vec_lst) and can_have_sum(vec_lst):
         sum = [ 0 ] * len(vec_lst[0])
         for i in range(len(vec_lst[0])):
@@ -153,12 +204,29 @@ def vectors_list_sum(vec_lst):
     return 
 
 def calc_the_inner_product(vec_1, vec_2):
+    """ gets two list, calculates their inner
+        product and returns it
+
+    :param vec_1: list of numbers
+    :param vec_2: list of numbers
+    :return: the inner product of the two lists.
+    """
     if len(vec_1) == len(vec_2):
         innerProduct = 0
         for i in range(len(vec_1)):
             innerProduct = innerProduct + vec_1[i] * vec_2[i]
         return innerProduct
+    
 def orthogonal_number(vectors):
+    """ get a list of vectors, and check how many pairs in
+    the list are orthogonal
+		 then it returns the amount of pairs as int.
+     You should use the calc_the_inner_product() helper function
+		 for calculations.
+
+    :param vectors: list of lists, with numbers in it
+    :return: number (float), of the amount of orthogonal pairs
+    """
     amount = 0
     for i in range(len(vectors)):
         for k in range(i+1,len(vectors)):

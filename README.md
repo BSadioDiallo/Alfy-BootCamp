@@ -24,3 +24,7 @@ All the stuff about the bootcamp
 **Tuesday+Wednesday - *List, Functions and all between***
 
 >Learning some concept used in programming
+
+**Friday - *Hangman***
+
+>Making a hangman with python

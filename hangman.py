@@ -10,7 +10,7 @@ def run_single_game(list_words, score):
     but with japan accent 'zawardo' go google this 'dio stand name' if you wanna see :)'''
     
     zaWardo, pattern, wrong_guess_list = game_initializer(list_words)
-    print(zaWardo)
+    
     hang.display_state(pattern, wrong_guess_list, score,'> Try to find out the hidden word')
     
     while '_' in pattern and score > 0:

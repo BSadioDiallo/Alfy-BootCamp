@@ -9,13 +9,9 @@ PAPER = 1
 SCISSOR = 2 
 ROCK = 3
 
-
-
-# this is because i am not casting the value in the menu function
-#i dont know if its a good thing or not but i thought it will make the code smaller, yeah 1 line :) haha
 def display_state(score_1, score_2):
-    '''this function display the state of the current round
-    param: input of players
+    '''This function displays the state of the current round
+    param: inputs of players
     return: nothing
     '''
     print('> Here is the score')
@@ -49,15 +45,15 @@ def user_input(msg=''):
         print("- s for Scissors \n- p for Paper \n- r for Rock")
         choice = input('> ')
         if choice.isalpha() and len(choice) == 1:
-            if choice and choice in 'sS':
+            if choice in 'sS':
                 return SCISSOR
-            elif choice and choice in 'pP':
+            elif choice in 'pP':
                 return PAPER
-            elif choice and choice in 'rR':
+            elif choice in 'rR':
                 return ROCK
             else:
                 print('# Invalid input')
-        elif choice == '!' and len(choice) == 1:
+        elif choice == '!':
             choice = input('Are you sure you want to quit ? (y/n) > ')
             if choice in 'yY':
                 return STOP

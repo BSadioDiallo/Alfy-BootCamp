@@ -2,20 +2,23 @@ from os import name as os_name, system
 import rock_paper_scissors_helper as helper
 from random import randint
 
-windows = 'nt'
-linux = 'posix'
+WINDOWS = 'nt'
+UNIX = 'posix'
+
 def clear_screen(os_name):
-    print(os_name)
-    if os_name == windows:
+    if os_name == WINDOWS:
         system('cls')
-    elif os_name == linux:
+    elif os_name == UNIX:
         system('clear')
 
+#This function handles game for user versu machine party
 def user_and_machine():
     print('USER VS MACHINE')
-    score_1, score_2 = 0 , 0
+    score_1, score_2 = 0 , 0 
     helper.display_state(score_1,score_2)
     clear_screen(os_name)
+    
+    # you can stop the game bye typing [!]
     while score_1 != 3 and score_2 != 3 and score_1 != '!':
         player_1 = helper.user_input(helper.PLAYER1)
         player_2 = randint(1,3)

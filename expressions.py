@@ -24,7 +24,7 @@ def calc_math_expression_from_str(str_input):
 def find_largest_and_smallest_numbers(num1=0.0, num2=0.0, num3=0.0):
     numbers = [ num1, num2, num3 ]
     numbers.sort()
-    return ( numbers[2], numbers[0] )
+    return ( numbers[-1], numbers[0] )
 
 def quadratic_equation_solver(a, b, c):
     if a != 0:
@@ -54,8 +54,8 @@ def quadratic_equation_solver_from_user_input():
 def temp_checker(min_temp, temp_1, temp_2, temp_3):
     numberOfDay = 0
     temps = [temp_1, temp_2, temp_3]
-    for i in range(len(temps)):
-        if temps[i] > min_temp:
+    for temp in temps:
+        if temp > min_temp:
             numberOfDay += 1
     
     if numberOfDay >= 2:
